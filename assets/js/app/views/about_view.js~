@@ -1,0 +1,19 @@
+AboutView = BaseView.extend({
+
+    el: $("#render-view"),
+    template: Handlebars.compile($("#about-tpl").html()),
+    
+    initialize: function()
+      {
+	  
+      },
+
+    render: function()
+      {
+	  console.log("AboutView::render");
+	  $(this.el).html(this.template());
+	  
+	  this.constructor.__super__.render.apply(this);
+	  return this;
+      }
+});

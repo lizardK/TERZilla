@@ -1,0 +1,30 @@
+{
+    "name": "TERZilla",
+    "description": "App for french TER trains",
+    "launch_path": "/index.html",
+    "icons": {
+	"128": "/assets/icons/TERZilla-128.png",
+	"64": "/assets/icons/TERZilla-64.png",
+	"48": "/assets/icons/TERZilla-48.png",
+	"32": "/assets/icons/TERZilla-32.png",
+	"24": "/assets/icons/TERZilla-24.png",
+	"16": "/assets/icons/TERZilla-16.png"
+    },
+    "developer": {
+	"name": "Cyril Biencourt"
+    },
+    "default_locale": "fr",
+    "fullscreen": "true",
+    "type": "privileged",
+    "permissions": {	
+        "systemXHR": { 
+	    "description": "Required for certain web communications" 
+	},
+	"alarms": {
+	    "description": "Required to schedule notifications"
+	},
+	"geolocation": {
+	    "description": "Required to find stations around you"
+	}
+    }
+}
