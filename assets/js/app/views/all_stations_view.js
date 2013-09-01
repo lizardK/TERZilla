@@ -22,11 +22,11 @@ AllStationsView = BaseView.extend({
     on_search_changed : function(e)
       {
 	  var name = $(e.currentTarget).val().toLowerCase();
+	  $(".list-group-item").removeClass("hide");
 	  var x = this.collection.each(function(t){
-	      $("#" + t.id).show();
 	      var n = t.get("n").toLowerCase();
 	      if( n.indexOf(name) == -1 )
-		  $("#" + t.id).hide();
+		  $("#" + t.id).addClass("hide");
 	  });
       },
 

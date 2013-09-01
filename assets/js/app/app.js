@@ -176,7 +176,8 @@ App = Backbone.Router.extend({
 		      }),
 		      self.m_collections.favouritesCollection.fetch()
 		  ).done(function(){
-		      console.log(localStorage.getItem("favourites"));
+		      if(!localStorage.getItem("stations"))
+			  localStorage.setItem("stations",JSON.stringify(self.m_collections.stationsCollection.toJSON()));
 		      if(options && options.success)
 			  options.success.call(self);
 		  }).fail(function(){

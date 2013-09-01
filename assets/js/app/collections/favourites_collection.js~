@@ -1,4 +1,0 @@
-FavouritesCollection = Backbone.Collection.extend({
-    model: StationModel,
-    localStorage : new Backbone.LocalStorage("favourites")
-});

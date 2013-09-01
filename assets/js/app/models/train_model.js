@@ -1,7 +1,7 @@
 TrainModel = Backbone.Model.extend({
     url: function()
       {
-	  return ["http://app.testsimon.fr/ws/index.php/train", 
+	  return ["http://app.testsimon.fr/ws/index.php/train2", 
 		  this.id , 
 		  this.from,
 		  this.to

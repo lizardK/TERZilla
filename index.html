@@ -37,7 +37,6 @@
 		  <span class="icon-bar"></span>
 		</button>
 		<a class="navbar-brand" href="#">
-		  <img src="assets/icons/TERZilla-24.png" />
 		  TERZilla
 		</a>
               </div>
@@ -71,6 +70,11 @@
 	  </a>
 	  {{/if}}
 	</div>
+	{{#if withFavourites}}
+	<img id="logo" src="assets/icons/TERZilla-128.png" alt="TERZilla" />
+	{{else}}
+	<img id="logo" src="assets/icons/TERZilla-128.png" alt="TERZilla" style="bottom:40px"/>
+	{{/if}}
       </div>
     </script>
 
@@ -180,16 +184,16 @@
 	</div>
       </header>
  
-	<div class="list-group">
-	  {{#each this}}
-	  <a id="{{id}}" href="#station/{{id}}" class="list-group-item">
-	    <span class="glyphicon glyphicon-chevron-right pull-right"></span>
-	    <h4 class="list-group-item-heading">{{n}}</h4>
-	    <p class="list-group-item-text">{{ct}} - {{c}}</p>
-	  </a>
-	  {{/each}}
-	</div>
+      <div class="list-group">
+	{{#each this}}
+	<a id="{{id}}" href="#station/{{id}}" class="list-group-item">
+	  <span class="glyphicon glyphicon-chevron-right pull-right"></span>
+	  <h4 class="list-group-item-heading">{{n}}</h4>
+	  <p class="list-group-item-text">{{ct}} - {{c}}</p>
+	</a>
+	{{/each}}
       </div>
+     </div>
     </script>
 
     <script id="favourites-tpl" type="text/x-handlebars-template">
@@ -251,9 +255,13 @@
 		<li><a href="#" data-i18n-text="TXT_HOME"></a></li>
 		<li><a href="#about" data-i18n-text="TXT_ABOUT"></a></li>
 		{{#if isFavourite}}
-		<li><a id="btn-remove-from-favourites" href="#" data-i18n-text="TXT_DELETE_FAVOURITES"></a></li>
+		<li>
+		  <a id="btn-remove-from-favourites" href="#" data-i18n-text="TXT_DELETE_FAVOURITES"></a>
+		</li>
 		{{else}}
-		<li><a id="btn-add-to-favourites" href="#" data-i18n-text="TXT_ADD_FAVOURITES"></a></li>
+		<li>
+		  <a id="btn-add-to-favourites" href="#" data-i18n-text="TXT_ADD_FAVOURITES"></a>
+		</li>
 		{{/if}}
               </ul>
             </div><!--/.nav-collapse -->
@@ -307,9 +315,9 @@
 	    <a id="{{id}}" href="#train/{{id}}/{{fromID}}/{{toID}}" class="list-group-item">
 	      <span class="glyphicon glyphicon-chevron-right pull-right">
 	      </span>
-	      <h4 class="list-group-item-heading">
+	      <p class="list-group-item-heading">
 		<span data-i18n-text="TXT_THE"></span> {{../strdate}} - {{duration}}
-	      </h4>
+	      </p>
 	      <img src="assets/icons/route.svg" class="pull-left"/>
 	      <p class="list-group-item-text">
 		<strong>{{from}}</strong> 
@@ -344,6 +352,7 @@
               <ul class="nav navbar-nav">
 		<li><a href="#" data-i18n-text="TXT_HOME"></a></li>
 		<li><a href="#about" data-i18n-text="TXT_ABOUT"></a></li>
+		<!--<li><a href="#" id="btn-add-alarm" data-i18n-text="TXT_ADD_ALARM"></a></li>-->
               </ul>
             </div><!--/.nav-collapse -->
 	  </div>
@@ -352,21 +361,17 @@
       <div id="train-view" >
 	<div class="panel panel-default">
 	  <div class="panel-heading">
-	    {{#with t}}
 	    <p><span data-i18n-text="TXT_LINE"></span> : {{rn}}</p>
-	    {{/with}}
 	    <p>le {{strdate}} - <span data-i18n-text="TXT_DURATION"></span> : {{duration}}</p>
 	  </div>
 	  <div class="panel-body">
 	    <ul id="stops-list"> 
-	      {{#with t}}
 	      {{#stops}}
 	      <li>
 		<span class="station-time pull-right">{{t}}</span>
 		<span class="station-name">{{n}}</span>  
 	      </li>
 	      {{/stops}}
-	      {{/with}}
 	    </ul>
 	  </div>
 	</div>
@@ -455,9 +460,9 @@
 	  {{#each trains}}
 	    <a id="{{id}}" href="#train/{{id}}/{{../fromID}}/{{../toID}}" class="list-group-item">
 	      <span class="glyphicon glyphicon-chevron-right pull-right"></span> 
-	      <h4 class="list-group-item-heading">
+	      <p class="list-group-item-heading">
 		<span data-i18n-text="TXT_THE"></span> {{../strdate}} - {{duration}}
-	      </h4>
+	      </p>
 	      <img src="assets/icons/route.svg" class="pull-left"/>
 	      <p class="list-group-item-text">
 		<strong>{{from}}</strong> 
@@ -475,7 +480,7 @@
 
     <script id="map-popup-tpl" type="text/x-handlebars-template">
       <div id="popup-tpl" class="row">
-	<img src="assets/icons/station.svg" class="col-md-4"/>
+	<img width="180" height="180" src="assets/icons/station.svg" class="col-md-4"/>
 	<div id="popup-station-infos" class="col-md-8">
 	  <p><strong>{{n}}</strong></p>
 	  <p class="city">{{ct}} - {{c}}</p>

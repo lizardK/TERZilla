@@ -9,9 +9,23 @@ body {
     padding-top: 55px;
 }
 
+.hide {
+    display: none;
+}
+
 #render-view {
     height: 100%;
     width: 100%;
+}
+
+
+#logo {
+    position: fixed;
+    bottom: 1px;
+    display: block;
+    width: 128px;
+    left: 50%;
+    margin-left : -64px;
 }
 
 #station-view-map {
@@ -73,6 +87,7 @@ body {
 #btn-valid {
     margin-bottom: 20px;
 }
+
 /*orange : #f37b16*/
 /*bg black : #3D3D3D*/
 /*btn : #00B8DD*/
