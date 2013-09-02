@@ -115,6 +115,12 @@ App = Backbone.Router.extend({
 	  modelNextDepartures.url = ["http://app.testsimon.fr/ws/index.php/trainsOfDay", id , 0].join("/");
 	  modelNextDepartures.fetch({
 	      success: function(){
+		  if(modelNextDepartures.get("np") == - 1)
+		    {
+			alert(I18n.tr("TXT_NO_RESULTS"));
+			history.back();
+			return;
+		    }
 		  self.closeAllViews();
 		  self.m_views.nextDepartureView = new NextDepartureView({
 		      model : modelNextDepartures

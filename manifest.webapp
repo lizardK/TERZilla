@@ -1,6 +1,7 @@
 {
     "name": "TERZilla",
-    "description": "App for french TER trains",
+    "version": "1.0",
+    "description": "Retrouver toutes les informations sur les trains du réseau TER",
     "launch_path": "/index.html",
     "icons": {
 	"128": "/assets/icons/TERZilla-128.png",

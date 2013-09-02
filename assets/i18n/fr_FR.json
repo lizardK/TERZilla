@@ -29,5 +29,6 @@
     "TXT_BETWEEN" : "entre",
     "TXT_AND" : "et",
     "TXT_RESULTS" : "Résultats",
-    "TXT_SOURCES_AVAILABLE" : "Les sources sont disponibles à"
+    "TXT_SOURCES_AVAILABLE" : "Les sources sont disponibles à",
+    "TXT_NO_RESULTS" : "Aucun résultat"
 }

@@ -52,8 +52,12 @@ SearchView = BaseView.extend({
 
 	  collectionResult.fetch({
 	      success: function(){
-		  console.log("success", JSON.stringify(collectionResult.toJSON()) );
-		  var modelResult = new Backbone.Model();
+		  console.log("success", collectionResult.length );
+		  if(collectionResult.length <= 0)
+		    {
+			alert(I18n.tr("TXT_NO_RESULTS"));
+			return;
+		    }
 		  
 		  var searchResultsView = new SearchResultsView({
 		      collection : collectionResult,
