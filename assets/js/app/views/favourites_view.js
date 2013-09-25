@@ -1,10 +1,10 @@
 FavouritesView = BaseView.extend({
     
-    template: Handlebars.compile($("#favourites-tpl").html()),
+    template: Handlebars.templates.favourites,
 
     initialize: function()
       {
-	  
+	  FavouritesView.__super__.initialize.call(this,arguments);	  
       },
 
     events : 
@@ -34,7 +34,7 @@ FavouritesView = BaseView.extend({
       {
 	  console.log("FavouritesView::render");
 	  $(this.el).html(this.template(this.collection.toJSON()));
-	  this.constructor.__super__.render.apply(this);
+	  FavouritesView.__super__.render.call(this,arguments);
 	  return this;
       }
 });

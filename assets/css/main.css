@@ -1,3 +1,9 @@
+/*orange : #f37b16*/
+/*bg black : #3D3D3D*/
+/*btn : #00B8DD*/
+/*bg white : #F0F0ED*/
+/*grey : #566062*/
+
 html {
   height: 100%;
   width: 100%;
@@ -7,6 +13,7 @@ body {
     height: 100%;
     width: 100%;
     padding-top: 55px;
+    /*background : #000;*/
 }
 
 .hide {
@@ -17,7 +24,6 @@ body {
     height: 100%;
     width: 100%;
 }
-
 
 #logo {
     position: fixed;
@@ -88,8 +94,32 @@ body {
     margin-bottom: 20px;
 }
 
-/*orange : #f37b16*/
-/*bg black : #3D3D3D*/
-/*btn : #00B8DD*/
-/*bg white : #F0F0ED*/
-/*grey : #566062*/
+.leaflet-popup-content {
+    width: 100px;
+    max-width: 100px;
+}
+
+.list-group, .list-group-item {
+    background: transparent;
+}
+
+.container {
+}
+
+.ico a {
+    display: block;
+    width: 135px;
+    height: 135px;
+    margin: auto;
+    margin-bottom: 20px;
+    border: solid 2px #ccc;
+    text-align: center;
+    padding-top: 25px;
+    border-radius: 10px;
+}
+
+.ico a  span{
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+}

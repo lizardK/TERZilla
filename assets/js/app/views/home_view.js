@@ -1,10 +1,10 @@
 HomeView = BaseView.extend({
     
-    template: Handlebars.compile($("#home-tpl").html()),
+    template: Handlebars.templates.home,
     
     initialize: function()
       {
-	  
+	  HomeView.__super__.initialize.call(this,arguments);
       },
 
     render: function()
@@ -13,7 +13,7 @@ HomeView = BaseView.extend({
 	  $(this.el).html(this.template({
 	      withFavourites: Application.m_collections.favouritesCollection.length > 0
 	  }));
-	  this.constructor.__super__.render.apply(this);
+	  HomeView.__super__.render.call(this,arguments);
 	  return this;
       }
 });

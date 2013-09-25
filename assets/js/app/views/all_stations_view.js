@@ -1,10 +1,10 @@
 AllStationsView = BaseView.extend({
     
-    template: Handlebars.compile($("#all-stations-tpl").html()),
+    template: Handlebars.templates.all_stations,
 
     initialize: function()
       {
-	  
+	  AllStationsView.__super__.initialize.apply(this,arguments);	  
       },
 
     events : 
@@ -34,7 +34,7 @@ AllStationsView = BaseView.extend({
       {
 	  console.log("AllStationsView::render");
 	  $(this.el).html(this.template(this.collection.toJSON()));
-	  this.constructor.__super__.render.apply(this);
+	  AllStationsView.__super__.render.call(this,arguments);
 	  return this;
       }
 });

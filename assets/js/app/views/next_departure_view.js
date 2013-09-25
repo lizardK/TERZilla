@@ -1,10 +1,10 @@
 NextDepartureView = BaseView.extend({
     
-    template: Handlebars.compile($("#next-departure-tpl").html()),
+    template: Handlebars.templates.next_departue,
 
     initialize: function()
       {
-	  
+	  NextDepartureView.__super__.initialize.call(this,arguments);
       },
 
      events : 
@@ -21,10 +21,9 @@ NextDepartureView = BaseView.extend({
     render: function()
       {
 	  console.log("NextDepartureView::render");
-	  //console.log(this.model.toJSON());
 	  this.model.set("strdate",dateToString(new Date()));
 	  $(this.el).html(this.template(this.model.toJSON()));
-	  this.constructor.__super__.render.apply(this);
+	  NextDepartureView.__super__.render.call(this,arguments);
 	  return this;
       }
 });

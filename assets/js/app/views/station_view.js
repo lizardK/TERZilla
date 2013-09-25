@@ -1,20 +1,21 @@
 StationView = BaseView.extend({
     
     el: $("#render-view"),
-    template: Handlebars.compile($("#station-tpl").html()),
-    templatePopup: Handlebars.compile($("#map-popup-tpl").html()),
+    template: Handlebars.templates.station,
+    templatePopup: Handlebars.templates.map_popup,
     m_map: null,
 
     initialize: function()
       {
-	  
+	  StationView.__super__.initialize.call(this,arguments);	  
       },
 
-    events : {
-	"click .btn-back" : "on_btnBack_clicked",
-	"click #btn-add-to-favourites" : "on_btnAddToFavourites_clicked",
-	"click #btn-remove-from-favourites" : "on_btnRemoveFromFavourites_clicked"
-    },
+    events : 
+      {
+	  "click .btn-back"                   : "on_btnBack_clicked",
+	  "click #btn-add-to-favourites"      : "on_btnAddToFavourites_clicked",
+	  "click #btn-remove-from-favourites" : "on_btnRemoveFromFavourites_clicked"
+      },
 
     on_btnBack_clicked : function()
       {
@@ -64,14 +65,14 @@ StationView = BaseView.extend({
       {
 	  this.m_map = L.map('station-view-map');
 	  L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-	      attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+	      attribution: '&copy; <a href="http://osm.org/copyright" target="_blank">OpenStreetMap</a> contributors'
 	  }).addTo(this.m_map);
 	  
-	  this.m_map.setView([this.model.get("coords").lat, this.model.get("coords").lon], 13);
 	  var m = new L.marker([this.model.get("coords").lat, this.model.get("coords").lon]);
 	  m.bindPopup(this.templatePopup(this.model.toJSON()));
 	  m.addTo(this.m_map);
-	  m.openPopup();
+	  this.m_map.setView([this.model.get("coords").lat, this.model.get("coords").lon], 17);
+	  $("a[href='http://leafletjs.com']",this.el).attr("target","_blank");
       },
 
     render: function()
@@ -79,7 +80,7 @@ StationView = BaseView.extend({
 	  console.log("StationView::render");
 	  $(this.el).html(this.template(this.model.toJSON()));
 	  this.initMap();
-	  this.constructor.__super__.render.apply(this);
+	  StationView.__super__.render.call(this,arguments);
 	  return this;
       }
 });

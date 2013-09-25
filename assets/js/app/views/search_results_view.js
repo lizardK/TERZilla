@@ -1,6 +1,6 @@
 SearchResultsView = BaseView.extend({
    
-    template: Handlebars.compile($("#search-results-tpl").html()),
+    template: Handlebars.templates.search_results,
     m_date: new Date(),
 
     initialize: function(options)
@@ -13,6 +13,8 @@ SearchResultsView = BaseView.extend({
 	  
 	  if(options && options.date)
 	      this.m_date = options.date;
+
+	  SearchResultsView.__super__.initialize.call(this,arguments);
       },
 
      events : 
@@ -36,7 +38,7 @@ SearchResultsView = BaseView.extend({
 	      toID: this.toID,
 	      strdate: dateToString(this.m_date)
 	  }));
-	  this.constructor.__super__.render.apply(this);
+	  SearchResultsView.__super__.render.call(this,arguments);
 	  return this;
       }
 });

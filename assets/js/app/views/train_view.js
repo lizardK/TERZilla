@@ -1,7 +1,7 @@
 TrainView = BaseView.extend({
     
     el: $("#render-view"),
-    template: Handlebars.compile($("#train-tpl").html()),
+    template: Handlebars.templates.train,
     m_map: null,
     m_date : new Date(),
 
@@ -9,6 +9,7 @@ TrainView = BaseView.extend({
       {
 	  if(options && options.date)
 	      this.m_date = options.date;
+	  TrainView.__super__.initialize.call(this,arguments);
       },
 
      events : 
@@ -56,7 +57,7 @@ TrainView = BaseView.extend({
 	  console.log("TrainView::render");
 	  this.model.set( "strdate", dateToString(this.m_date));
 	  $(this.el).html(this.template(this.model.toJSON()));
-	  this.constructor.__super__.render.apply(this);
+	  TrainView.__super__.render.call(this,this);
 	  return this;
       }
 });

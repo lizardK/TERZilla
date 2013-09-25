@@ -17,6 +17,7 @@
     "TXT_NEXT_DEPARTURES_DESC" : "Afficher les prochains trains au départ de cette gare",
     "TXT_SEARCH" : "Rechercher un train",
     "TXT_SEARCH_DESC" : "Rechercher un train au départ de cette gare",
+    "TXT_SEARCH_STATION" : "Rechercher une gare",
     "TXT_STATION" : "Gare",
     "TXT_THE" : "Le",
     "TXT_TRAVEL_DETAILS" : "Détails du voyage",

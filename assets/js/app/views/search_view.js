@@ -1,11 +1,11 @@
 SearchView = BaseView.extend({
     
     el: $("#render-view"),
-    template: Handlebars.compile($("#search-tpl").html()),
+    template: Handlebars.templates.search,
 
     initialize: function()
       {
-	  
+	  SearchView.__super__.initialize.call(this,arguments);
       },
 
     events : 
@@ -22,7 +22,6 @@ SearchView = BaseView.extend({
 
      on_form_submitted: function(e)
       {
-	  console.log(new Date($("#date-departure").val()));
 	  var d = $("#date-departure").val();
 	  d = d.replace(/\-/g,'|');
 
@@ -52,7 +51,6 @@ SearchView = BaseView.extend({
 
 	  collectionResult.fetch({
 	      success: function(){
-		  console.log("success", collectionResult.length );
 		  if(collectionResult.length <= 0)
 		    {
 			alert(I18n.tr("TXT_NO_RESULTS"));
@@ -90,7 +88,7 @@ SearchView = BaseView.extend({
 	      name : "stations",
 	      local : self.collection.pluck('n')
 	  });
-	  this.constructor.__super__.render.apply(this);
+	  SearchView.__super__.render.call(this,arguments);
 	  return this;
       }
 });

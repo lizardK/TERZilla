@@ -113,9 +113,10 @@ App = Backbone.Router.extend({
 	  
 	  var modelNextDepartures = new Backbone.Model();
 	  modelNextDepartures.url = ["http://app.testsimon.fr/ws/index.php/trainsOfDay", id , 0].join("/");
+	  console.log(modelNextDepartures.url);
 	  modelNextDepartures.fetch({
 	      success: function(){
-		  if(modelNextDepartures.get("np") == - 1)
+		  if(!modelNextDepartures.get("t") || modelNextDepartures.get("t").length <= 0)
 		    {
 			alert(I18n.tr("TXT_NO_RESULTS"));
 			history.back();

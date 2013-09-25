@@ -1,8 +1,8 @@
 AroundMeView = BaseView.extend({
     
     el: $("#render-view"),
-    template: Handlebars.compile($("#around-me-tpl").html()),
-    templatePopup: Handlebars.compile($("#map-popup-tpl").html()),
+    template: Handlebars.templates.around_me,
+    templatePopup: Handlebars.templates.map_popup,
     m_map: null,
     m_coords : {},
     m_markers : new L.MarkerClusterGroup(),
@@ -10,7 +10,7 @@ AroundMeView = BaseView.extend({
 
     initialize: function()
       {
-	  
+	  AroundMeView.__super__.initialize.call(this,arguments);	  
       },
 
     events : 
@@ -53,7 +53,7 @@ AroundMeView = BaseView.extend({
 		      
 		  });
 		  self.m_map.addLayer(self.m_markers);
-		  
+		  alert(c.length);
 	      },
 	      error: function(err,xhrerr){
 		  console.log(xhrerr);
@@ -72,7 +72,7 @@ AroundMeView = BaseView.extend({
 
 	  this.m_map = L.map('map-around-me');
 	  L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-	      attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+	      attribution: '&copy; <a href="http://osm.org/copyright" target="_blank">OpenStreetMap</a> contributors'
 	  }).addTo(this.m_map);
 	  
 	  this.m_map.on('locationfound', function(e){
@@ -82,6 +82,8 @@ AroundMeView = BaseView.extend({
 	      self.m_coords.longitude = e.latlng.lng;
 	      L.marker(e.latlng).addTo(self.m_map)
 		  .bindPopup("Me");
+
+	      $("a[href='http://leafletjs.com']",self.el).attr("target","_blank");
 	  });
 	  
 	  this.m_map.on('locationerror', function(e) {
@@ -96,7 +98,7 @@ AroundMeView = BaseView.extend({
 	  console.log("AroundMeView::render");
 	  $(this.el).html(this.template());
 	  this.initMap();
-	  this.constructor.__super__.render.apply(this);
+	  AroundMeView.__super__.render.call(this,arguments);
 	  return this;
       }
 });
