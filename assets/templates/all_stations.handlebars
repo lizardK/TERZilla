@@ -1,0 +1,36 @@
+<div id="all-stations-view"  >
+  <header>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	    <span class="icon-bar"></span>
+	    <span class="icon-bar"></span>
+	    <span class="icon-bar"></span>
+          </button>
+	  <a class="btn navbar-btn pull-left btn-back" href="#">
+	    <span class="glyphicon glyphicon-chevron-left"></span>
+	  </a>
+          <a class="navbar-brand" href="#" data-i18n-text="TXT_ALL_STATIONS"></a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+	    <li><a href="#" data-i18n-text="TXT_HOME"></a></li>
+	    <li><a href="#about" data-i18n-text="TXT_ABOUT"></a></li>
+	    <li><input type="search" data-i18n-placeholder="TXT_SEARCH_STATION" placeholder="" class="form-control"/></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+  </header>
+  
+  <div class="list-group">
+    {{#each this}}
+    <a id="{{id}}" href="#station/{{id}}" class="list-group-item">
+      <span class="glyphicon glyphicon-chevron-right pull-right"></span>
+      <h4 class="list-group-item-heading">{{n}}</h4>
+      <p class="list-group-item-text">{{ct}} - {{c}}</p>
+    </a>
+    {{/each}}
+  </div>
+</div>

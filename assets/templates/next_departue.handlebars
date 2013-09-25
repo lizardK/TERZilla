@@ -1,0 +1,45 @@
+<header>
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	  <span class="icon-bar"></span>
+	  <span class="icon-bar"></span>
+	  <span class="icon-bar"></span>
+        </button>
+	<a class="btn navbar-btn pull-left btn-back" href="#">
+	  <span class="glyphicon glyphicon-chevron-left"></span>
+	</a>
+        <a class="navbar-brand" href="#" data-i18n-text="TXT_NEXT_DEPARTURES"></a>
+      </div>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+	  <li><a href="#" data-i18n-text="TXT_HOME"></a></li>
+	  <li><a href="#about" data-i18n-text="TXT_ABOUT"></a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+</header>
+<div id="next-departure-view" >
+  <div id="list-group-next-departures" class="list-group">
+    {{#t}}
+    <a id="{{id}}" href="#train/{{id}}/{{fromID}}/{{toID}}" class="list-group-item">
+      <span class="glyphicon glyphicon-chevron-right pull-right">
+      </span>
+      <p class="list-group-item-heading">
+	<span data-i18n-text="TXT_THE"></span> {{../strdate}} - {{duration}}
+      </p>
+      <img src="assets/icons/route.svg" class="pull-left"/>
+      <p class="list-group-item-text">
+	<strong>{{from}}</strong> 
+	<span class="pull-right station-time">{{st}}</span>
+      </p>
+      <p class="list-group-item-text">
+	<strong>{{to}}</strong> 
+	<span class="pull-right station-time">{{et}}</span>
+      </p>
+    </a>
+    {{/t}}
+  </div>
+</div>
