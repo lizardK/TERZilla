@@ -13,7 +13,11 @@ body {
     height: 100%;
     width: 100%;
     padding-top: 55px;
-    /*background : #000;*/
+    /*background : #3d3d3d;*/
+}
+
+.well {
+    margin-top: 0;
 }
 
 .hide {
@@ -99,11 +103,9 @@ body {
     max-width: 100px;
 }
 
-.list-group, .list-group-item {
-    background: transparent;
-}
-
-.container {
+#home-view h1 {
+    font-size: 14px;
+    text-align : center;
 }
 
 .ico a {
@@ -114,12 +116,65 @@ body {
     margin-bottom: 20px;
     border: solid 2px #ccc;
     text-align: center;
-    padding-top: 25px;
+    padding-top: 10px;
     border-radius: 10px;
+    color: white;
 }
 
 .ico a  span{
     display: block;
     text-align: center;
     margin-top: 10px;
+}
+
+.ico a img{
+    width: 90px;
+}
+
+.btn-around-me {
+    background-color: rgb(135, 184, 127);
+}
+
+.btn-all-stations {
+    background-color: rgb(79, 153, 198);
+}
+
+.btn-search {
+    background-color: #f37b16;
+}
+
+.btn-favourites {
+    background-color: rgb(183, 70, 53);
+}
+
+#all-stations-view .list-group-item img, #favourites-view .list-group-item img{
+    float: left;
+    margin-right : 5px;
+}
+
+#about-view {
+    padding: 5px;
+}
+
+/* -- DARK THEME --*/
+body.dark {
+    background : #3d3d3d;
+    color: white !important;
+}
+
+body.dark a,body.dark h1,body.dark h2,body.dark h3,body.dark h4,body.dark h5,body.dark h6, body.dark , body.dark .list-group-item-heading {
+    color: white !important;
+}
+
+body.dark .list-group, .list-group-item , body.dark .panel{
+    background: transparent;
+  
+}
+
+body.dark .list-group-item:hover {
+    background: transparent;
+}
+
+body.dark .leaflet-popup-content {
+    color : #3d3d3d;
 }

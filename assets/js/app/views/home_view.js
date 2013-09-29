@@ -1,6 +1,6 @@
 HomeView = BaseView.extend({
     
-    template: Handlebars.templates.home,
+    template: Handlebars.templates.home_new,
     
     initialize: function()
       {

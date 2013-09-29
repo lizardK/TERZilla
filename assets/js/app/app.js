@@ -8,6 +8,7 @@ App = Backbone.Router.extend({
       {
 	  ""                    :   "home",
 	  "about"               :   "about",
+	  "settings"            :   "settings",
 	  "arround-me"          :   "arroundMe",
 	  "all-stations"        :   "allStations",
 	  "search"              :   "search",
@@ -19,12 +20,22 @@ App = Backbone.Router.extend({
 
     initialize: function()
       {
-	  $(window).on("online", function(){
-	      self.m_online = true;
+	  
+      },
+
+    getSettings : function()
+      {
+	  var settings = JSON.parse(localStorage.getItem("parameters")) || {};
+	  $("body")
+	      .removeClass("dark")
+	      .removeClass("light")
+	      .addClass(settings.theme);
+
+	  I18n.setLang({
+	      lang :settings.lang,
+	      success : function(){}
 	  });
-	  $(window).on("offline", function(){
-	      self.m_online = false;
-	  });
+	  return settings;
       },
 
     closeAllViews: function()
@@ -61,6 +72,13 @@ App = Backbone.Router.extend({
 	  this.closeAllViews();
 	  this.m_views.aboutView = new AboutView();
 	  this.m_views.aboutView.render();
+      },
+
+    settings: function() 
+      {
+	  this.closeAllViews();
+	  this.m_views.settingsView = new SettingsView();
+	  this.m_views.settingsView.render();
       },
 
     arroundMe: function() 
@@ -183,6 +201,7 @@ App = Backbone.Router.extend({
 		      }),
 		      self.m_collections.favouritesCollection.fetch()
 		  ).done(function(){
+		      self.getSettings();
 		      if(!localStorage.getItem("stations"))
 			  localStorage.setItem("stations",JSON.stringify(self.m_collections.stationsCollection.toJSON()));
 		      if(options && options.success)

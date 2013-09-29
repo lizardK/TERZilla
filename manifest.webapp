@@ -1,6 +1,6 @@
 {
     "name": "TERZilla",
-    "version": "1.0",
+    "version": "1.2",
     "description": "Retrouver toutes les informations sur les trains du réseau TER",
     "launch_path": "/index.html",
     "icons": {

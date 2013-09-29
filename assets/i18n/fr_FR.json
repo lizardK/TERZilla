@@ -1,4 +1,5 @@
 {
+    "MSG_WELCOME" : "Accédez aux informations du réseau TER",
     "TXT_HOME" : "Accueil",
     "TXT_ABOUT" : "A propos",
     "TXT_AROUND_ME" : "Autour de moi",
@@ -31,5 +32,16 @@
     "TXT_AND" : "et",
     "TXT_RESULTS" : "Résultats",
     "TXT_SOURCES_AVAILABLE" : "Les sources sont disponibles à",
-    "TXT_NO_RESULTS" : "Aucun résultat"
+    "TXT_NO_RESULTS" : "Aucun résultat",
+    "TXT_SETTINGS" : "Paramètres",
+    "TXT_APPEARENCE" : "Apparence de l'application",
+    "TXT_LANGS" : "Langue de l'application",
+    "TXT_MAP_STYLE" : "Style de cartographie",
+    "TXT_LIGHT" : "Clair",
+    "TXT_DARK" : "Sombre",
+    "TXT_SELECT_THEME" : "Sélectionner le thème",
+    "TXT_SELECT_LANG": "Sélectionner la langue",
+    "TXT_SELECT_MAP" : "Choisir le style de carte",
+    "TXT_MAP" : "Carte",
+    "TXT_SATELLITE" : "Satellite"
 }

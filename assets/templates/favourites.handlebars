@@ -16,6 +16,7 @@
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
 	    <li><a href="#" data-i18n-text="TXT_HOME"></a></li>
+	    <li><a href="#settings" data-i18n-text="TXT_SETTINGS"></a></li>
 	    <li><a href="#about" data-i18n-text="TXT_ABOUT"></a></li>
 	    <li><input type="search" data-i18n-placeholder="TXT_SEARCH" placeholder="" class="form-control"/></li>
           </ul>
@@ -28,7 +29,8 @@
     {{#each this}}
     <a id="{{id}}" href="#station/{{id}}" class="list-group-item">
       <span class="glyphicon glyphicon-chevron-right pull-right"></span>
-      <h4 class="list-group-item-heading">{{n}}</h4>
+       <img src="assets/icons/station.svg" height="40"/>
+       <h4 class="list-group-item-heading">{{n}}</h4>
       <p class="list-group-item-text">{{ct}} - {{c}}</p>
     </a>
     {{/each}}

@@ -71,7 +71,11 @@ AroundMeView = BaseView.extend({
 	  var self = this;
 
 	  this.m_map = L.map('map-around-me');
-	  L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+	  var mapUrl = "http://{s}.tile.osm.org/{z}/{x}/{y}.png";
+	  if(Application.getSettings().map == "satellite")
+	      mapUrl = "http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}";
+
+	  L.tileLayer(mapUrl, {
 	      attribution: '&copy; <a href="http://osm.org/copyright" target="_blank">OpenStreetMap</a> contributors'
 	  }).addTo(this.m_map);
 	  
