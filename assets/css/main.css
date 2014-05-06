@@ -13,7 +13,7 @@ body {
     height: 100%;
     width: 100%;
     padding-top: 55px;
-    /*background : #3d3d3d;*/
+    
 }
 
 .well {
@@ -114,11 +114,15 @@ body {
     height: 135px;
     margin: auto;
     margin-bottom: 20px;
-    border: solid 2px #ccc;
+    /*border: solid 2px #ccc;*/
     text-align: center;
     padding-top: 10px;
-    border-radius: 10px;
+    border-radius: 0;
     color: white;
+}
+
+.ico a:hover {
+    text-decoration: none;
 }
 
 .ico a  span{
@@ -177,4 +181,13 @@ body.dark .list-group-item:hover {
 
 body.dark .leaflet-popup-content {
     color : #3d3d3d;
+}
+
+.no-items {
+    font-size: 22px;
+    text-align: center;
+    color: #58585a;
+    position: absolute;
+    top: 50%;
+    margin-top: -11px;
 }

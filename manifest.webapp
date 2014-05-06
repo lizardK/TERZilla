@@ -1,32 +1,32 @@
 {
-    "name": "TERZilla",
-    "version": "1.2",
-    "description": "Retrouver toutes les informations sur les trains du réseau TER",
-    "launch_path": "/index.html",
-    "icons": {
-	"128": "/assets/icons/TERZilla-128.png",
-	"64": "/assets/icons/TERZilla-64.png",
-	"60": "/assets/icons/TERZilla-60.png",
-	"48": "/assets/icons/TERZilla-48.png",
-	"32": "/assets/icons/TERZilla-32.png",
-	"24": "/assets/icons/TERZilla-24.png",
-	"16": "/assets/icons/TERZilla-16.png"
+  "name": "TERZilla",
+  "version": "1.3",
+  "description": "Retrouver toutes les informations sur les trains du réseau TER",
+  "launch_path": "/index.html",
+  "icons": {
+    "16": "/assets/icons/TERZilla-16.png",
+    "24": "/assets/icons/TERZilla-24.png",
+    "32": "/assets/icons/TERZilla-32.png",
+    "48": "/assets/icons/TERZilla-48.png",
+    "60": "/assets/icons/TERZilla-60.png",
+    "64": "/assets/icons/TERZilla-64.png",
+    "128": "/assets/icons/TERZilla-128.png"
+  },
+  "developer": {
+    "name": "Cyril Biencourt"
+  },
+  "default_locale": "fr",
+  "fullscreen": "true",
+  "type": "privileged",
+  "permissions": {
+    "systemXHR": {
+      "description": "Required for certain web communications"
     },
-    "developer": {
-	"name": "Cyril Biencourt"
+    "alarms": {
+      "description": "Required to schedule notifications"
     },
-    "default_locale": "fr",
-    "fullscreen": "true",
-    "type": "privileged",
-    "permissions": {	
-        "systemXHR": { 
-	    "description": "Required for certain web communications" 
-	},
-	"alarms": {
-	    "description": "Required to schedule notifications"
-	},
-	"geolocation": {
-	    "description": "Required to find stations around you"
-	}
+    "geolocation": {
+      "description": "Required to find stations around you"
     }
+  }
 }

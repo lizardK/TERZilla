@@ -14,6 +14,9 @@
     "TXT_SEARCH" : "Search",
     "TXT_DELETE_FAVOURITES" : "Remove from favorites",
     "TXT_ADD_FAVOURITES" : "Add to favorites",
+    "TXT_NO_FAVOURITES" : "No favourites",
+    "TXT_STATION_ADD_FAVOURITES" : "has been added to the favourites",
+    "TXT_STATION_DELETE_FAVOURITES" : "has been removed from the favourites",
     "TXT_NEXT_DEPARTURES" :"Upcoming departures",
     "TXT_NEXT_DEPARTURES_DESC" : "Show next trains from this station",
     "TXT_SEARCH" : "Find a train",
@@ -43,5 +46,6 @@
     "TXT_SELECT_LANG": "Choose your language",
     "TXT_SELECT_MAP" : "Choose your map style",
     "TXT_MAP" : "Map",
-    "TXT_SATELLITE" : "Satellite"
+    "TXT_SATELLITE" : "Satellite",
+    "TXT_THE_STATION": "The station"
 }

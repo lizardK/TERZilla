@@ -18,21 +18,26 @@
 	    <li><a href="#" data-i18n-text="TXT_HOME"></a></li>
 	    <li><a href="#settings" data-i18n-text="TXT_SETTINGS"></a></li>
 	    <li><a href="#about" data-i18n-text="TXT_ABOUT"></a></li>
-	    <li><input type="search" data-i18n-placeholder="TXT_SEARCH" placeholder="" class="form-control"/></li>
+            {{#if this}}
+	      <li><input type="search" data-i18n-placeholder="TXT_SEARCH" placeholder="" class="form-control"/></li>
+            {{/if}}
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </div>
   </header>
-  
-  <div class="list-group">
-    {{#each this}}
-    <a id="{{id}}" href="#station/{{id}}" class="list-group-item">
-      <span class="glyphicon glyphicon-chevron-right pull-right"></span>
-       <img src="assets/icons/station.svg" height="40"/>
-       <h4 class="list-group-item-heading">{{n}}</h4>
-      <p class="list-group-item-text">{{ct}} - {{c}}</p>
-    </a>
-    {{/each}}
-  </div>
+   {{#unless this}}
+    <p class="no-items" data-i18n-text="TXT_NO_FAVOURITES"></p>
+    {{else}}
+      <div class="list-group"> 
+        {{#each this}}
+          <a id="{{id}}" href="#station/{{id}}" class="list-group-item">
+          <span class="glyphicon glyphicon-chevron-right pull-right"></span>
+          <img src="assets/icons/station.svg" height="40"/>
+          <h4 class="list-group-item-heading">{{n}}</h4>
+          <p class="list-group-item-text">{{ct}} - {{c}}</p>
+          </a>
+        {{/each}}
+      </div>
+   {{/unless}}
 </div>

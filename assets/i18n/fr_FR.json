@@ -14,6 +14,9 @@
     "TXT_SEARCH" : "Rechercher",
     "TXT_DELETE_FAVOURITES" : "Supprimer des favoris",
     "TXT_ADD_FAVOURITES" : "Ajouter aux favoris",
+    "TXT_NO_FAVOURITES" : "Aucune gare n'a été ajoutée aux favoris",
+    "TXT_STATION_ADD_FAVOURITES" : "a bien été ajoutée aux favoris",
+    "TXT_STATION_DELETE_FAVOURITES" : "a bien été supprimée des favoris",
     "TXT_NEXT_DEPARTURES" :"Les prochains départs",
     "TXT_NEXT_DEPARTURES_DESC" : "Afficher les prochains trains au départ de cette gare",
     "TXT_SEARCH" : "Rechercher un train",
@@ -43,5 +46,6 @@
     "TXT_SELECT_LANG": "Sélectionner la langue",
     "TXT_SELECT_MAP" : "Choisir le style de carte",
     "TXT_MAP" : "Carte",
-    "TXT_SATELLITE" : "Satellite"
+    "TXT_SATELLITE" : "Satellite",
+    "TXT_THE_STATION": "La gare"
 }
